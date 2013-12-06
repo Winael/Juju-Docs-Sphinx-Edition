@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Bienvenue dans la documentation de Juju Edition Sphinx &mdash; Juju docs - Sphinx Edition 0.1 documentation</title>
+    <title>Welcome to Juju docs - Sphinx Edition’s documentation! &mdash; Juju docs - Sphinx Edition 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,17 +25,20 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Juju docs - Sphinx Edition 0.1 documentation" href="#" /> 
+    <link rel="top" title="Juju docs - Sphinx Edition 0.1 documentation" href="#" />
+    <link rel="next" title="Introduction" href="getting-started.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
+          <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Introduction"
+             accesskey="N">next</a> |</li>
         <li><a href="#">Juju docs - Sphinx Edition 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -46,87 +49,157 @@
           <div class="body">
             
   <div class="section" id="welcome-to-juju-docs-sphinx-edition-s-documentation">
-<h1>Bienvenue dans la documentation de Juju Edition Sphinx<a class="headerlink" href="#welcome-to-juju-docs-sphinx-edition-s-documentation" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Contenu</p>
+<h1>Welcome to Juju docs - Sphinx Edition&#8217;s documentation!<a class="headerlink" href="#welcome-to-juju-docs-sphinx-edition-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>User Guide:</p>
 <div class="toctree-wrapper compound">
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#configuring">Configuring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#testing-your-setup">Testing your setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-aws.html">Configuring for Amazon AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-azure.html">Configuring for Windows Azure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config-azure.html#config-values">Config Values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config-hpcloud.html">Configuring for HPCloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-openstack.html">Configuring for OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-maas.html">Configuring for MAAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config-maas.html#get-your-api-key">Get your API key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-maas.html#edit-or-create-the-configuration">Edit or create the configuration</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Ce tutoriel vous montrera comment commencer avec Juju, en incluant l&#8217;installation, la configuration, et le bootstrap d&#8217;un nouvel environnement Juju. Avant de commencer vous aurez besoin de :</p>
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will show you how to get started with Juju, including
+installing, configuring and bootstrapping a new Juju environment.
+Before you start you will need:</p>
 <ul class="simple">
-<li>Ubuntu, OSX ou un machine Windows pour y installer le client.</li>
-<li>Un environnement qui peut fournir un nouveau serveur avec une image du système d&#8217;exploitation Ubuntu pour nuage sur demande. Cela comprend les services tels que Amazon EC2, HP Cloud, une installation d&#8217;OpenStack, ou votre machine locale</li>
-<li>Une paire de clés SSH. Si vous n&#8217;en n&#8217;avez pas déjà mis un en place, vous devez générer une paire de clés appropriées. Sous Linux et Mac OSX: <cite>ssh-keygen-t rsa-b 2048</cite> Sous Windows: Voir les <cite>instructions Windows pour SSH et PuTTY</cite> _</li>
+<li>An Ubuntu, OSX or Windows machine to install the client on.</li>
+<li>An environment which can provide a new server with an Ubuntu cloud
+operating system image on-demand. This includes services such as
+Amazon EC2, HP Cloud, an OpenStack installation, or your local machine</li>
+<li>An SSH key-pair. If you have not already set one up, you need to
+generate an appropriate keypair. On Linux and Mac OSX: <tt class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span>
+<span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">2048</span></tt> On Windows: See the <a class="reference external" href="getting-started-keygen-win.html">Windows instructions for SSH and
+PuTTY</a></li>
 </ul>
 </div>
 <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Pour installer Juju, il vous suffit de récupérer le dernier paquet juju-core du PPA:</p>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>To install Juju, you simply need to grab the latest juju-core package
+from the PPA:</p>
 <ul>
-<li><p class="first"><a href="#id1"><span class="problematic" id="id2">**</span></a>Ubuntu : **</p>
+<li><p class="first"><strong>Ubuntu :</strong></p>
 <div class="highlight-python"><pre>sudo add-apt-repository ppa:juju/stable
 sudo apt-get update &amp;&amp; sudo apt-get install juju-core</pre>
 </div>
 </li>
-<li><p class="first">** Mac OSX : **</p>
-<p>Juju est dans <cite>Homebrew</cite> _, pour l&#8217;installer faire :</p>
+<li><p class="first"><strong>Mac OSX :</strong></p>
+<p>Juju is in <a class="reference external" href="http://brew.sh/">Homebrew</a>, to install do:</p>
 <div class="highlight-python"><pre>brew install juju</pre>
 </div>
 </li>
-<li><p class="first">** De Windows: **</p>
-<p>Téléchargez et exécutez le <cite>Juju installateur de fenêtres d&#8217;ici</cite>. _</p>
+<li><p class="first"><strong>Windows :</strong></p>
+<p>Download and run the <a class="reference external" href="https://launchpad.net/juju-core/1.16/1.16.2/+download/juju-setup-1.16.2-signed.exe">Juju windows installer from here.</a></p>
 </li>
 </ul>
 </div>
 <div class="section" id="configuring">
-<h1>Configuration<a class="headerlink" href="#configuring" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Maintenant, le logiciel Juju est installé, il doit être configuré pour utiliser le fournisseur de nuage particulier. Cela se fait par la production et l&#8217;édition d&#8217;un fichier, <cite>environments.yaml</cite>, qui vivra dans votre <cite>juju ~ /.</cite> Répertoire / sous Linux et OSX, <cite>% LOCALAPPDATA% / Juju</cite> sur Windows. Vous pouvez générer le fichier environnements manuellement, mais Juju comprend également une option de configuration passe-partout qui étoffer plus du fichier pour vous et de minimiser la quantité de travail (et les erreurs potentielles).</p>
-<p>Pour générer un fichier de configuration initial, il vous suffit de lancer:</p>
+<h1>Configuring<a class="headerlink" href="#configuring" title="Permalink to this headline">¶</a></h1>
+<p>Now the Juju software is installed, it needs to be configured to use
+your particular cloud provider. This is done by generating and editing
+a file, <tt class="docutils literal"><span class="pre">environments.yaml</span></tt>, which will live in your <tt class="docutils literal"><span class="pre">~/.juju/</span></tt>
+directory on Linux and OSX, <tt class="docutils literal"><span class="pre">%LOCALAPPDATA%/Juju</span></tt> on Windows. You can
+generate the environments file manually, but Juju also includes a
+boilerplate configuration option that will flesh out most of the file
+for you and minimise the amount of work (and potential errors).</p>
+<p>To generate an initial config file, you simply need to run:</p>
 <div class="highlight-python"><pre>juju generate-config</pre>
 </div>
-<p>Cette commande provoquera un fichier à écrire dans votre répertoire de juju ~ /. S&#8217;il n&#8217;existe pas déjà un fichier environments.yaml. Il permettra également de créer le répertoire ~. / Juju si cela n&#8217;existe pas.</p>
-<p>Ce fichier contient les profils échantillons pour différents types de services de cloud computing, mais vous devez modifier les fichiers de fournir des informations spécifiques à votre fournisseur de cloud. Les articles sont créés pour Amazon Les Services (AWS), HPCloud et une instance de OpenStack générique (et pour le fournisseur local si vous travaillez sur Linux). Pour plus de détails sur ce qui doit être changé, voir les sections pertinentes ci-dessous.</p>
+<p>This command will cause a file to be written to your ~/.juju directory
+if an environments.yaml file does not already exist. It will also
+create the ~./juju directory if that does not exist.</p>
+<p>This file will contain sample profiles for different types of cloud
+services, but you will need to edit the files to provide specific
+information for your cloud provider. Sections are created for Amazon
+(AWS) services, HPCloud and a generic OpenStack instance (and for the
+local provider if running on Linux). For more specifics on what needs
+to be changed, see the relevant sections below.</p>
 <ul class="simple">
-<li><cite>Configurer pour Amazon AWS</cite> _</li>
-<li><cite>Configurer pour Windows Azure</cite> _</li>
-<li><cite>Configuration pour HP Cloud</cite> _</li>
-<li><cite>Configurer pour OpenStack</cite> _</li>
-<li><cite>Configurer pour MAAS</cite> _</li>
-<li><cite>Configurer pour LXC fournisseur local (Linux)</cite> _</li>
+<li><a class="reference external" href="config-aws.html">Configuring for Amazon AWS</a></li>
+<li><a class="reference external" href="https://juju.ubuntu.com/config-azure.html">Configuring for Windows Azure</a></li>
+<li><a class="reference external" href="config-hpcloud.html">Configuring for HP Cloud</a></li>
+<li><a class="reference external" href="config-openstack.html">Configuring for OpenStack</a></li>
+<li><a class="reference external" href="config-maas.html">Configuring for MAAS</a></li>
+<li><a class="reference external" href="https://juju.ubuntu.com/config-local.html">Configuring for LXC local provider (Linux)</a></li>
 </ul>
 </div>
 <div class="section" id="testing-your-setup">
-<h1>Test de votre configuration<a class="headerlink" href="#testing-your-setup" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Une fois que vous avez installé et configuré Juju, il est probablement une bonne idée de prendre un peu d&#8217;un essai et vérifier que tout fonctionne comme prévu. Parce que Juju, il est vraiment facile à déployer des services, c&#8217;est en fait simple et rapide.</p>
-<p>La première chose à faire est de mettre en place un environnement de démarrage. Ceci est un exemple dans le nuage que Juju va utiliser pour déployer et contrôler d&#8217;autres services avec. Il sera créé selon la configuration que vous avez fourni, et votre clé SSH sera automatiquement téléchargé afin que Juju peut communiquer en toute sécurité avec l&#8217;instance de démarrage.</p>
+<h1>Testing your setup<a class="headerlink" href="#testing-your-setup" title="Permalink to this headline">¶</a></h1>
+<p>Once you have installed and configured Juju, it is probably a good
+idea to take it for a bit of a test drive and check that everything is
+working as expected. Because Juju makes it really easy to deploy
+services, this is actually quick and straightforward.</p>
+<p>The first thing to do is set up a bootstrap environment. This is an
+instance in the cloud that Juju will use to deploy and control other
+services with. It will be created according to the configuration you
+have provided, and your SSH key will automatically be uploaded so that
+Juju can communicate securely with the bootstrap instance.</p>
 <div class="highlight-python"><pre>juju bootstrap</pre>
 </div>
-<p>Remarque: Si vous disposez de plusieurs environnements configurés, vous pouvez choisir celui qui pour répondre à une commande particulière en ajoutant le commutateur <cite>-e</cite> suivi par le nom de l&#8217;environnement, par exemple <cite>-e hpcloud</cite>.</p>
-<p>Vous pourriez avoir à attendre quelques instants pour cette commande pour revenir, car il a besoin pour effectuer diverses tâches et contactez votre fournisseur de cloud.</p>
-<p>En supposant qu&#8217;il renvoie avec succès (voir par ailleurs les messages d&#8217;erreur courants et quoi faire à leur sujet), nous pouvons désormais déployer des services et d&#8217;explorer les opérations de base de Juju.</p>
-<p>Pour commencer, nous allons déployer Wordpress, en exécutant cette commande:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have multiple environments configured, you can choose
+which one to address with a particular command by adding the <tt class="docutils literal"><span class="pre">-e</span></tt>
+switch followed by the environment name, E.g. <tt class="docutils literal"><span class="pre">-e</span> <span class="pre">hpcloud</span></tt>.</p>
+</div>
+<p>You may have to wait a few moments for this command to return, as it
+needs to perform various tasks and contact your cloud provider.</p>
+<p>Assuming it returns successfully (otherwise see <a class="reference external" href="index.html">common error messages
+and what to do about them</a>), we can now deploy some services and
+explore the basic operations of Juju.</p>
+<p>To start with, we will deploy Wordpress, by running this command:</p>
 <div class="highlight-python"><pre>juju deploy wordpress</pre>
 </div>
-<p>Juju vont maintenant chercher le charme Wordpress et l&#8217;utiliser, par exemple le bootstrap à la demande et de déployer toutes les ressources dont elle a besoin pour mettre en place ce service.</p>
-<p>Wordpress a besoin d&#8217;une base de données, donc nous allons également déployer un de ceux:</p>
+<p>Now juju will fetch the Wordpress charm and use it, through the
+bootstrap instance to request and deploy whatever resources it needs
+to set up this service.</p>
+<p>Wordpress needs a database though, so we will also deploy one of
+those:</p>
 <div class="highlight-python"><pre>juju deploy mysql</pre>
 </div>
-<p>Une fois de plus, juju feront tout ce qui est nécessaire pour déployer ce service pour vous, et il peut prendre un certain temps pour la commande pour revenir.</p>
-<p>Remarque: Si vous souhaitez obtenir plus d&#8217;informations sur ce qui se passe, ou pour aider à résoudre les problèmes de, vous pouvez ajouter l&#8217;option-v à la commande de juju pour obtenir une sortie détaillée.</p>
-<p>Bien que nous ayons déployé Wordpress et une base de données MySQL, ils ne sont pas encore reliés entre eux en aucune façon. Pour ce faire, nous devons exécuter:</p>
+<p>Once again, juju will do whatever is necessary to deploy this service
+for you, and it may take some time for the command to return.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to get more information on what is actually
+happening, or to help resolve problems, you can add the -v switch to
+the juju command to get verbose output.</p>
+</div>
+<p>Although we have deployed Wordpress and a MySQL database, they are not
+linked together in any way yet. To do this we should run:</p>
 <div class="highlight-python"><pre>juju add-relation wordpress mysql</pre>
 </div>
-<p>Cette commande utilise les informations fournies par les charmes pertinents à associer ces services à l&#8217;autre de quelque manière logique. Il ya beaucoup plus à dire sur la liaison des services ensemble qui est couvert dans la documentation de la commande de juju, mais pour le moment, nous avons juste besoin de savoir ce qu&#8217;il lie ces services ensemble.</p>
-<p>Afin de rendre notre Wordpress publique, nous devons maintenant exposer ce service:</p>
+<p>This command uses information provided by the relevant charms to
+associate these services with each other in whatever way makes sense.
+There is much more to be said about linking services together which <a class="reference external" href="index.html">is
+covered in the juju command documentation</a>, but for the moment, we just
+need to know that it will link these services together.</p>
+<p>In order to make our Wordpress public, we now need to expose this
+service:</p>
 <div class="highlight-python"><pre>juju expose wordpress</pre>
 </div>
-<p>Ce service va maintenant être configuré pour répondre aux requêtes web, afin que les visiteurs peuvent voir. Mais où est-il exactement? Si nous lançons la commande d&#8217;état de juju, nous serons en mesure de voir quels services sont en cours d&#8217;exécution, et où ils se trouvent.</p>
+<p>This service will now be configured to respond to web requests, so
+visitors can see it. But where exactly is it? If we run the juju
+status command, we will be able to see what services are running, and
+where they are located.</p>
 <div class="highlight-python"><pre>juju status</pre>
 </div>
-<p>La sortie de cette commande devrait ressembler à ceci:</p>
+<p>The output from this command should look something like this:</p>
 <div class="highlight-python"><pre>machines:
   "0":
     agent-state: started
@@ -174,16 +247,31 @@ services:
         machine: "2"
         public-address: ec2-54-224-220-210.compute-1.amazonaws.com</pre>
 </div>
-<p>Il est tout à fait beaucoup d&#8217;informations ici. la première section, machines intitulé:, détaille toutes les instances qui sont en cours d&#8217;exécution. Pour chaque, vous verrez la version de Juju ils sont en cours d&#8217;exécution, leur hôte, ID instance et la série ou la version de Ubuntu ils sont en cours d&#8217;exécution.</p>
-<p>Après cela, les sections répertorient les services qui sont actuellement déployés. Les informations ici diffère légèrement selon le service et comment il est configuré. Il sera toutefois, la liste toujours le charme qui a été utilisé pour déployer le service, s&#8217;il est exposé ou non, et quelle que soit son adresse relations existent.</p>
-<p>De ce statut lecture, nous pouvons voir que wordpress est exposé et prêt. Si nous copions simplement l&#8217;adresse dans un navigateur Web, nous devrions être en mesure de le voir courir</p>
-<p>Félicitations, vous venez de déployer un service avec Juju!</p>
-<p>Maintenant, vous êtes prêt à déployer n&#8217;importe quel service vous voulez vraiment des 100s disponibles à l&#8217;<cite>Juju Charm magasin.</cite> _</p>
-<p>Pour supprimer tous les déploiements actuels et dissiper tout sur votre nuage, vous pouvez exécuter la commande:</p>
+<p>There is quite a lot of information here. the first section, titled
+machines: , details all the instances which are currently running. For
+each you will see the version of Juju they are running, their
+hostname, instance id and the series or version of Ubuntu they are
+running.</p>
+<p>After that, the sections list the services which are currently
+deployed. The information here differs slightly according to the
+service and how it is configured. It will however, always list the
+charm that was used to deploy the service, whether it is exposed or
+not, its address and whatever relationships exist.</p>
+<p>From this status readout, we can see that wordpress is exposed and
+ready. If we simply copy the address into a web browser, we should be
+able to see it running</p>
+<img alt="_images/getting_started-wordpress.png" src="_images/getting_started-wordpress.png" />
+<p>Congratulations, you have just deployed a service with Juju!</p>
+<p>Now you are ready to deploy whatever service you really want from the
+100s available at the <a class="reference external" href="http://jujucharms.com">Juju Charm Store.</a></p>
+<p>To remove all current deployments and clear up everything in your
+cloud, you can run the command:</p>
 <div class="highlight-python"><pre>juju destroy-environment</pre>
 </div>
-<p>Cela permettra d&#8217;éliminer tout, y compris le nœud de démarrage.</p>
-<p>Pour en savoir plus sur les charmes, y compris les options de configuration et la gestion des systèmes en cours d&#8217;exécution, vous devez continuer à lire la documentation <cite>de charme.</cite> _</p>
+<p>This will remove everything, including the bootstrap node.</p>
+<p>To learn more about charms, including configuring options and managing
+running systems, you should continue to <a class="reference external" href="https://juju.ubuntu.com/./charms.html">read the charm
+documentation.</a></p>
 </div>
 
 
@@ -192,24 +280,27 @@ services:
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table des matières</a></h3>
+  <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Bienvenue dans la documentation de Juju Edition Sphinx</a><ul>
+<li><a class="reference internal" href="#">Welcome to Juju docs - Sphinx Edition&#8217;s documentation!</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#configuring">Configuration</a></li>
-<li><a class="reference internal" href="#testing-your-setup">Test de votre configuration</a></li>
+<li><a class="reference internal" href="#configuring">Configuring</a></li>
+<li><a class="reference internal" href="#testing-your-setup">Testing your setup</a></li>
 </ul>
 
-  <h3>Cette page</h3>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="getting-started.html"
+                        title="next chapter">Introduction</a></p>
+  <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
-           rel="nofollow">Montrer la source</a></li>
+           rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Recherche rapide</h3>
+  <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
@@ -217,7 +308,7 @@ services:
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    Enter search terms or a module, class or function name.
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -229,14 +320,17 @@ services:
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
+          <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Introduction"
+             >next</a> |</li>
         <li><a href="#">Juju docs - Sphinx Edition 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Winael.
-      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
 </html>
