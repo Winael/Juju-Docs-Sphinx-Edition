@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to Juju docs - Sphinx Edition’s documentation!</title>
+    
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Juju docs - Sphinx Edition 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-juju-docs-sphinx-edition-s-documentation">
+<h1>Welcome to Juju docs - Sphinx Edition&#8217;s documentation!</h1>
+<p>User Guide:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#configuring">Configuring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#testing-your-setup">Testing your setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-aws.html">Configuring for Amazon AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-azure.html">Configuring for Windows Azure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config-azure.html#config-values">Config Values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config-hpcloud.html">Configuring for HPCloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-openstack.html">Configuring for OpenStack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config-maas.html">Configuring for MAAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config-maas.html#get-your-api-key">Get your API key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-maas.html#edit-or-create-the-configuration">Edit or create the configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction</h1>
+<p>This tutorial will show you how to get started with Juju, including
+installing, configuring and bootstrapping a new Juju environment.
+Before you start you will need:</p>
+<ul class="simple">
+<li>An Ubuntu, OSX or Windows machine to install the client on.</li>
+<li>An environment which can provide a new server with an Ubuntu cloud
+operating system image on-demand. This includes services such as
+Amazon EC2, HP Cloud, an OpenStack installation, or your local machine</li>
+<li>An SSH key-pair. If you have not already set one up, you need to
+generate an appropriate keypair. On Linux and Mac OSX: <tt class="docutils literal"><span class="pre">ssh-keygen</span> <span class="pre">-t</span>
+<span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">2048</span></tt> On Windows: See the <a class="reference external" href="getting-started-keygen-win.html">Windows instructions for SSH and
+PuTTY</a></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h1>Installation</h1>
+<p>To install Juju, you simply need to grab the latest juju-core package
+from the PPA:</p>
+<ul>
+<li><p class="first"><strong>Ubuntu :</strong></p>
+<div class="highlight-python"><pre>sudo add-apt-repository ppa:juju/stable
+sudo apt-get update &amp;&amp; sudo apt-get install juju-core</pre>
+</div>
+</li>
+<li><p class="first"><strong>Mac OSX :</strong></p>
+<p>Juju is in <a class="reference external" href="http://brew.sh/">Homebrew</a><span class="link-target"> [http://brew.sh/]</span>, to install do:</p>
+<div class="highlight-python"><pre>brew install juju</pre>
+</div>
+</li>
+<li><p class="first"><strong>Windows :</strong></p>
+<p>Download and run the <a class="reference external" href="https://launchpad.net/juju-core/1.16/1.16.2/+download/juju-setup-1.16.2-signed.exe">Juju windows installer from here.</a><span class="link-target"> [https://launchpad.net/juju-core/1.16/1.16.2/+download/juju-setup-1.16.2-signed.exe]</span></p>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring">
+<h1>Configuring</h1>
+<p>Now the Juju software is installed, it needs to be configured to use
+your particular cloud provider. This is done by generating and editing
+a file, <tt class="docutils literal"><span class="pre">environments.yaml</span></tt>, which will live in your <tt class="docutils literal"><span class="pre">~/.juju/</span></tt>
+directory on Linux and OSX, <tt class="docutils literal"><span class="pre">%LOCALAPPDATA%/Juju</span></tt> on Windows. You can
+generate the environments file manually, but Juju also includes a
+boilerplate configuration option that will flesh out most of the file
+for you and minimise the amount of work (and potential errors).</p>
+<p>To generate an initial config file, you simply need to run:</p>
+<div class="highlight-python"><pre>juju generate-config</pre>
+</div>
+<p>This command will cause a file to be written to your ~/.juju directory
+if an environments.yaml file does not already exist. It will also
+create the ~./juju directory if that does not exist.</p>
+<p>This file will contain sample profiles for different types of cloud
+services, but you will need to edit the files to provide specific
+information for your cloud provider. Sections are created for Amazon
+(AWS) services, HPCloud and a generic OpenStack instance (and for the
+local provider if running on Linux). For more specifics on what needs
+to be changed, see the relevant sections below.</p>
+<ul class="simple">
+<li><a class="reference external" href="config-aws.html">Configuring for Amazon AWS</a></li>
+<li><a class="reference external" href="https://juju.ubuntu.com/config-azure.html">Configuring for Windows Azure</a><span class="link-target"> [https://juju.ubuntu.com/config-azure.html]</span></li>
+<li><a class="reference external" href="config-hpcloud.html">Configuring for HP Cloud</a></li>
+<li><a class="reference external" href="config-openstack.html">Configuring for OpenStack</a></li>
+<li><a class="reference external" href="config-maas.html">Configuring for MAAS</a></li>
+<li><a class="reference external" href="https://juju.ubuntu.com/config-local.html">Configuring for LXC local provider (Linux)</a><span class="link-target"> [https://juju.ubuntu.com/config-local.html]</span></li>
+</ul>
+</div>
+<div class="section" id="testing-your-setup">
+<h1>Testing your setup</h1>
+<p>Once you have installed and configured Juju, it is probably a good
+idea to take it for a bit of a test drive and check that everything is
+working as expected. Because Juju makes it really easy to deploy
+services, this is actually quick and straightforward.</p>
+<p>The first thing to do is set up a bootstrap environment. This is an
+instance in the cloud that Juju will use to deploy and control other
+services with. It will be created according to the configuration you
+have provided, and your SSH key will automatically be uploaded so that
+Juju can communicate securely with the bootstrap instance.</p>
+<div class="highlight-python"><pre>juju bootstrap</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have multiple environments configured, you can choose
+which one to address with a particular command by adding the <tt class="docutils literal"><span class="pre">-e</span></tt>
+switch followed by the environment name, E.g. <tt class="docutils literal"><span class="pre">-e</span> <span class="pre">hpcloud</span></tt>.</p>
+</div>
+<p>You may have to wait a few moments for this command to return, as it
+needs to perform various tasks and contact your cloud provider.</p>
+<p>Assuming it returns successfully (otherwise see <a class="reference external" href="index.html">common error messages
+and what to do about them</a>), we can now deploy some services and
+explore the basic operations of Juju.</p>
+<p>To start with, we will deploy Wordpress, by running this command:</p>
+<div class="highlight-python"><pre>juju deploy wordpress</pre>
+</div>
+<p>Now juju will fetch the Wordpress charm and use it, through the
+bootstrap instance to request and deploy whatever resources it needs
+to set up this service.</p>
+<p>Wordpress needs a database though, so we will also deploy one of
+those:</p>
+<div class="highlight-python"><pre>juju deploy mysql</pre>
+</div>
+<p>Once again, juju will do whatever is necessary to deploy this service
+for you, and it may take some time for the command to return.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to get more information on what is actually
+happening, or to help resolve problems, you can add the -v switch to
+the juju command to get verbose output.</p>
+</div>
+<p>Although we have deployed Wordpress and a MySQL database, they are not
+linked together in any way yet. To do this we should run:</p>
+<div class="highlight-python"><pre>juju add-relation wordpress mysql</pre>
+</div>
+<p>This command uses information provided by the relevant charms to
+associate these services with each other in whatever way makes sense.
+There is much more to be said about linking services together which <a class="reference external" href="index.html">is
+covered in the juju command documentation</a>, but for the moment, we just
+need to know that it will link these services together.</p>
+<p>In order to make our Wordpress public, we now need to expose this
+service:</p>
+<div class="highlight-python"><pre>juju expose wordpress</pre>
+</div>
+<p>This service will now be configured to respond to web requests, so
+visitors can see it. But where exactly is it? If we run the juju
+status command, we will be able to see what services are running, and
+where they are located.</p>
+<div class="highlight-python"><pre>juju status</pre>
+</div>
+<p>The output from this command should look something like this:</p>
+<div class="highlight-python"><pre>machines:
+  "0":
+    agent-state: started
+    agent-version: 1.10.0
+    dns-name: ec2-50-16-167-135.compute-1.amazonaws.com
+    instance-id: i-781bf614
+    series: precise
+  "1":
+    agent-state: started
+    agent-version: 1.10.0
+    dns-name: ec2-23-22-225-54.compute-1.amazonaws.com
+    instance-id: i-9e8927f6
+    series: precise
+  "2":
+    agent-state: started
+    agent-version: 1.10.0
+    dns-name: ec2-54-224-220-210.compute-1.amazonaws.com
+    instance-id: i-5c440436
+    series: precise
+services:
+  mysql:
+    charm: cs:precise/mysql-18
+    exposed: false
+    relations:
+      db:
+      - wordpress
+    units:
+      mysql/0:
+        agent-state: started
+        agent-version: 1.10.0
+        machine: "1"
+        public-address: ec2-23-22-225-54.compute-1.amazonaws.com
+  wordpress:
+    charm: cs:precise/wordpress-12
+    exposed: true
+    relations:
+      db:
+      - mysql
+      loadbalancer:
+      - wordpress
+    units:
+      wordpress/0:
+        agent-state: started
+        agent-version: 1.10.0
+        machine: "2"
+        public-address: ec2-54-224-220-210.compute-1.amazonaws.com</pre>
+</div>
+<p>There is quite a lot of information here. the first section, titled
+machines: , details all the instances which are currently running. For
+each you will see the version of Juju they are running, their
+hostname, instance id and the series or version of Ubuntu they are
+running.</p>
+<p>After that, the sections list the services which are currently
+deployed. The information here differs slightly according to the
+service and how it is configured. It will however, always list the
+charm that was used to deploy the service, whether it is exposed or
+not, its address and whatever relationships exist.</p>
+<p>From this status readout, we can see that wordpress is exposed and
+ready. If we simply copy the address into a web browser, we should be
+able to see it running</p>
+<img alt="_images/getting_started-wordpress.png" src="_images/getting_started-wordpress.png" />
+<p>Congratulations, you have just deployed a service with Juju!</p>
+<p>Now you are ready to deploy whatever service you really want from the
+100s available at the <a class="reference external" href="http://jujucharms.com">Juju Charm Store.</a><span class="link-target"> [http://jujucharms.com]</span></p>
+<p>To remove all current deployments and clear up everything in your
+cloud, you can run the command:</p>
+<div class="highlight-python"><pre>juju destroy-environment</pre>
+</div>
+<p>This will remove everything, including the bootstrap node.</p>
+<p>To learn more about charms, including configuring options and managing
+running systems, you should continue to <a class="reference external" href="https://juju.ubuntu.com/./charms.html">read the charm
+documentation.</a><span class="link-target"> [https://juju.ubuntu.com/./charms.html]</span></p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Winael.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

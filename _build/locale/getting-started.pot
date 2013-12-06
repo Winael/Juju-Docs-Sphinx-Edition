@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013, Winael
+# This file is distributed under the same license as the Juju docs - Sphinx Edition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:38\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../getting-started.rst:2
+# 0891c70fc8204270ab49e3352393812e
+msgid "Introduction"
+msgstr ""
+
+#: ../../getting-started.rst:4
+# 0c39ab55e6064f228d5f92eb2b70b30f
+msgid "This tutorial will show you how to get started with Juju, including installing, configuring and bootstrapping a new Juju environment. Before you start you will need:"
+msgstr ""
+
+#: ../../getting-started.rst:9
+# 4986342e1b974e3e8592c7cd880da154
+msgid "An Ubuntu, OSX or Windows machine to install the client on."
+msgstr ""
+
+#: ../../getting-started.rst:10
+# 44320fe2990a491b9ebbfa7aadb52da3
+msgid "An environment which can provide a new server with an Ubuntu cloud operating system image on-demand. This includes services such as Amazon EC2, HP Cloud, an OpenStack installation, or your local machine"
+msgstr ""
+
+#: ../../getting-started.rst:13
+# e879d08a2a234875adaafec607e4595d
+msgid "An SSH key-pair. If you have not already set one up, you need to generate an appropriate keypair. On Linux and Mac OSX: ``ssh-keygen -t rsa -b 2048`` On Windows: See the `Windows instructions for SSH and PuTTY`_"
+msgstr ""
+
+#: ../../getting-started.rst:22
+# 082a0edb334744e2ae0fef93d6cc3206
+msgid "Installation"
+msgstr ""
+
+#: ../../getting-started.rst:23
+# e1d04c50316a4450a13e3eb359847cab
+msgid "To install Juju, you simply need to grab the latest juju-core package from the PPA:"
+msgstr ""
+
+#: ../../getting-started.rst:26
+# 6f3b07d4b70a48fea30e5c42b49b54b9
+msgid "**Ubuntu :**"
+msgstr ""
+
+#: ../../getting-started.rst:33
+# 09e34cfbf1554b86a88297397522c6b8
+msgid "**Mac OSX :**"
+msgstr ""
+
+#: ../../getting-started.rst:35
+# c875501353094df080398c16cd79d37f
+msgid "Juju is in `Homebrew`_, to install do:"
+msgstr ""
+
+#: ../../getting-started.rst:41
+# 78e81d7ef1ba4991abccc4d3dca43a56
+msgid "**Windows :**"
+msgstr ""
+
+#: ../../getting-started.rst:43
+# 53fb666a09b042f4ab010faa365d086b
+msgid "Download and run the `Juju windows installer from here.`_"
+msgstr ""
+
+#: ../../getting-started.rst:48
+# 4417020693fc48968f94d5970563fc08
+msgid "Configuring"
+msgstr ""
+
+#: ../../getting-started.rst:50
+# 44a9b0dee6ea424db5b7143506bfdbc9
+msgid "Now the Juju software is installed, it needs to be configured to use your particular cloud provider. This is done by generating and editing a file, ``environments.yaml``, which will live in your ``~/.juju/`` directory on Linux and OSX, ``%LOCALAPPDATA%/Juju`` on Windows. You can generate the environments file manually, but Juju also includes a boilerplate configuration option that will flesh out most of the file for you and minimise the amount of work (and potential errors)."
+msgstr ""
+
+#: ../../getting-started.rst:58
+# b2fc4b09ad654c1787626f083e14674c
+msgid "To generate an initial config file, you simply need to run:"
+msgstr ""
+
+#: ../../getting-started.rst:66
+# 55287e0177a64b7f949d1f1f3e6a275d
+msgid "This command will cause a file to be written to your ~/.juju directory if an environments.yaml file does not already exist. It will also create the ~./juju directory if that does not exist."
+msgstr ""
+
+#: ../../getting-started.rst:70
+# da4214761f0e40dcbc33c086624117aa
+msgid "This file will contain sample profiles for different types of cloud services, but you will need to edit the files to provide specific information for your cloud provider. Sections are created for Amazon (AWS) services, HPCloud and a generic OpenStack instance (and for the local provider if running on Linux). For more specifics on what needs to be changed, see the relevant sections below."
+msgstr ""
+
+#: ../../getting-started.rst:78
+# 5fef5966405047688ddb5209d6ebc9fa
+msgid "`Configuring for Amazon AWS`_"
+msgstr ""
+
+#: ../../getting-started.rst:79
+# 4526207258fa4d2280f2b818e5683200
+msgid "`Configuring for Windows Azure`_"
+msgstr ""
+
+#: ../../getting-started.rst:80
+# 58256d52d5004a4fbf6b718038374462
+msgid "`Configuring for HP Cloud`_"
+msgstr ""
+
+#: ../../getting-started.rst:81
+# 9481f3a7a25e4367954c74870494ffde
+msgid "`Configuring for OpenStack`_"
+msgstr ""
+
+#: ../../getting-started.rst:82
+# 04ad28210c7e46f28a99897c1cade308
+msgid "`Configuring for MAAS`_"
+msgstr ""
+
+#: ../../getting-started.rst:83
+# c515948591cf48a4b391d9a063b340b6
+msgid "`Configuring for LXC local provider (Linux)`_"
+msgstr ""
+
+#: ../../getting-started.rst:89
+# 5232f0ab9dbc4ddd93b07c98e2aaf9be
+msgid "Testing your setup"
+msgstr ""
+
+#: ../../getting-started.rst:91
+# c12a0b7eaa4641cfb406b7029aa9ec70
+msgid "Once you have installed and configured Juju, it is probably a good idea to take it for a bit of a test drive and check that everything is working as expected. Because Juju makes it really easy to deploy services, this is actually quick and straightforward."
+msgstr ""
+
+#: ../../getting-started.rst:96
+# 45d1d457762b4bee97e282e9e51d1e45
+msgid "The first thing to do is set up a bootstrap environment. This is an instance in the cloud that Juju will use to deploy and control other services with. It will be created according to the configuration you have provided, and your SSH key will automatically be uploaded so that Juju can communicate securely with the bootstrap instance."
+msgstr ""
+
+#: ../../getting-started.rst:109
+# 76e7bc2307e64362a826e135194871d4
+msgid "If you have multiple environments configured, you can choose which one to address with a particular command by adding the ``-e`` switch followed by the environment name, E.g. ``-e hpcloud``."
+msgstr ""
+
+#: ../../getting-started.rst:113
+# f8ee639077a34cb79664916e3eed32ad
+msgid "You may have to wait a few moments for this command to return, as it needs to perform various tasks and contact your cloud provider."
+msgstr ""
+
+#: ../../getting-started.rst:116
+# 2cd9a777d8f44184b5dffe85e8f7b410
+msgid "Assuming it returns successfully (otherwise see `common error messages and what to do about them`_), we can now deploy some services and explore the basic operations of Juju."
+msgstr ""
+
+#: ../../getting-started.rst:120
+# acf6af7fda1e4a7a9ab6fcbf057481bb
+msgid "To start with, we will deploy Wordpress, by running this command:"
+msgstr ""
+
+#: ../../getting-started.rst:128
+# dcfdbaa41e394f40a54f59e387dd7182
+msgid "Now juju will fetch the Wordpress charm and use it, through the bootstrap instance to request and deploy whatever resources it needs to set up this service."
+msgstr ""
+
+#: ../../getting-started.rst:132
+# 0f70ae6908194da7a727fc830748674b
+msgid "Wordpress needs a database though, so we will also deploy one of those:"
+msgstr ""
+
+#: ../../getting-started.rst:141
+# f839466dce194bdf8101a74c5a90bd1c
+msgid "Once again, juju will do whatever is necessary to deploy this service for you, and it may take some time for the command to return."
+msgstr ""
+
+#: ../../getting-started.rst:144
+# 8ac201954e6a42f6bab3a1b3e52aacf3
+msgid "If you want to get more information on what is actually happening, or to help resolve problems, you can add the -v switch to the juju command to get verbose output."
+msgstr ""
+
+#: ../../getting-started.rst:148
+# dab04ef7dfcc421b8d9a1adc21118313
+msgid "Although we have deployed Wordpress and a MySQL database, they are not linked together in any way yet. To do this we should run:"
+msgstr ""
+
+#: ../../getting-started.rst:157
+# 8cd3bfcd7d5342e1aaca49a4b066027d
+msgid "This command uses information provided by the relevant charms to associate these services with each other in whatever way makes sense. There is much more to be said about linking services together which `is covered in the juju command documentation`_, but for the moment, we just need to know that it will link these services together."
+msgstr ""
+
+#: ../../getting-started.rst:163
+# 7646b6202fcb4d40a90e836e307177a8
+msgid "In order to make our Wordpress public, we now need to expose this service:"
+msgstr ""
+
+#: ../../getting-started.rst:172
+# 9d37322e29c642448cf831f874562c3c
+msgid "This service will now be configured to respond to web requests, so visitors can see it. But where exactly is it? If we run the juju status command, we will be able to see what services are running, and where they are located."
+msgstr ""
+
+#: ../../getting-started.rst:183
+# 8d9c8473cd694f8f970ab173aa7c5c80
+msgid "The output from this command should look something like this:"
+msgstr ""
+
+#: ../../getting-started.rst:237
+# 301528ddb0f74f998573cef5ab33c7bd
+msgid "There is quite a lot of information here. the first section, titled machines: , details all the instances which are currently running. For each you will see the version of Juju they are running, their hostname, instance id and the series or version of Ubuntu they are running."
+msgstr ""
+
+#: ../../getting-started.rst:243
+# 213bfff560ce434db9e0e111cbd50930
+msgid "After that, the sections list the services which are currently deployed. The information here differs slightly according to the service and how it is configured. It will however, always list the charm that was used to deploy the service, whether it is exposed or not, its address and whatever relationships exist."
+msgstr ""
+
+#: ../../getting-started.rst:249
+# b11537047a174321915897e10c0c7d25
+msgid "From this status readout, we can see that wordpress is exposed and ready. If we simply copy the address into a web browser, we should be able to see it running"
+msgstr ""
+
+#: ../../getting-started.rst:255
+# b89b81dfa73b4d43bcf954506de8e0f4
+msgid "Congratulations, you have just deployed a service with Juju!"
+msgstr ""
+
+#: ../../getting-started.rst:257
+# a0d560089a4f4488931636a454ffa564
+msgid "Now you are ready to deploy whatever service you really want from the 100s available at the `Juju Charm Store.`_"
+msgstr ""
+
+#: ../../getting-started.rst:260
+# 256611f3570a472993d7eff515927b30
+msgid "To remove all current deployments and clear up everything in your cloud, you can run the command:"
+msgstr ""
+
+#: ../../getting-started.rst:269
+# 41d3543a05674dcb8d3392ccf95ef91c
+msgid "This will remove everything, including the bootstrap node."
+msgstr ""
+
+#: ../../getting-started.rst:271
+# a726eaa6e9de49be8e306abb1c5b3df6
+msgid "To learn more about charms, including configuring options and managing running systems, you should continue to `read the charm documentation.`_"
+msgstr ""
+

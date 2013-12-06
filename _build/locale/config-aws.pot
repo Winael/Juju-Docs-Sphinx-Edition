@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013, Winael
+# This file is distributed under the same license as the Juju docs - Sphinx Edition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:38\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../config-aws.rst:2
+# da6e865837d1410dacaa10ec5f4b91f1
+msgid "Configuring for Amazon AWS"
+msgstr ""
+
+#: ../../config-aws.rst:4
+# f1c9f37e31204d6d83ee32ec7436a390
+msgid "This process requires you to have an Amazon Web Services (AWS) account. If you have not signed up for one yet, it can obtained at `http://aws.amazon.com`_."
+msgstr ""
+
+#: ../../config-aws.rst:8
+# 0e7ea6ce761947a18c3e84068a225f4d
+msgid "You should start by generating a generic configuration file for Juju, using the command:"
+msgstr ""
+
+#: ../../config-aws.rst:16
+# 3178ee69fa794e728ebb192d858efbb2
+msgid "This will generate a file, environments.yaml , which will live in your ~/.juju/ directory (and will create the directory if it doesn't already exist)."
+msgstr ""
+
+#: ../../config-aws.rst:20
+# 12f916fbf10347baabaae8eafb7c7b33
+msgid "If you have an existing configuration, you can use ``juju generate-config --show`` to output the new config file, then copy and paste relevant areas in a text editor etc."
+msgstr ""
+
+#: ../../config-aws.rst:24
+# 7cf1d3dcd72544068d9304b39287b742
+msgid "The generic configuration sections generated for AWS will look something like this:"
+msgstr ""
+
+#: ../../config-aws.rst:45
+# ac505a4a6389400e94a487f80de3507a
+msgid "This is a simple configuration intended to run on EC2 with S3 permanent storage. Values for the default setting can be changed simply by editing this file, uncommenting the relevant lines and adding your own settings. All you need to do to get this configuration to work is to either set the ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY`` via environment variables, or uncomment and add the values to the configuration file."
+msgstr ""
+
+#: ../../config-aws.rst:53
+# 9d738da7d4e746e691d3dd1d1b7526a3
+msgid "You can retrieve these values easily from your AWS Management Console at `http://console.aws.amazon.com`_. Click on your name in the top- right and then the \"Security Credentials\" link from the drop down menu."
+msgstr ""
+
+#: ../../config-aws.rst:60
+# 296b3ad130d8434e8a83b86621e5313d
+msgid "Under the \"Access Keys\" heading click the \"Create New Root Key\" button. You will be prompted to \"Download Key File\" which by default is named ``rootkey.csv``. Open this file to get the access-key and secret- key for the environments.yaml configuration file."
+msgstr ""
+
+#: ../../config-aws.rst:67
+# 493cc7ea11534e3cbe83f7ae9fe2b428
+msgid "The region: value corresponds to the AWS regions."
+msgstr ""
+

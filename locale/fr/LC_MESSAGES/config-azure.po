@@ -1,0 +1,139 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:09\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../config-azure.rst:2
+msgid "Configuring for Windows Azure"
+msgstr ""
+
+#: ../../config-azure.rst:4
+msgid ""
+"This process requires you to have an Windows Azure account. If you have not "
+"signed up for one yet, it can obtained at `http://www.windowsazure.com/`_."
+msgstr ""
+
+#: ../../config-azure.rst:8
+msgid ""
+"You should start by generating a generic configuration file for Juju, using "
+"the command:"
+msgstr ""
+
+#: ../../config-azure.rst:16
+msgid ""
+"This will generate a file, environments.yaml , which will live in your "
+"~/.juju/ directory (and will create the directory if it doesn't already "
+"exist)."
+msgstr ""
+
+#: ../../config-azure.rst:20
+msgid ""
+"The above command will not overwrite your existing environments.yaml file, "
+"or output to stdout. In order to see the boilerplate environment.yaml on "
+"stdout you need to append the ``--show`` option. This is helpful if you have"
+" an existing environment.yaml and just need to add a section. For example:"
+msgstr ""
+
+#: ../../config-azure.rst:32
+msgid "You can then copy and paste the needed section."
+msgstr ""
+
+#: ../../config-azure.rst:34
+msgid ""
+"The generic configuration sections generated for Windows Azure will look "
+"something like this:"
+msgstr ""
+
+#: ../../config-azure.rst:67
+msgid ""
+"This is the configuration environments.yaml file needed to run on Windows "
+"Azure. You will need to set the ``management-subscription-id``, "
+"``management-certificate-path``, and ``storage-account-name``."
+msgstr ""
+
+#: ../../config-azure.rst:71
+msgid ""
+"Other than ``location`` the other key vaule defaults are recommended, but "
+"can be updated to your preference."
+msgstr ""
+
+#: ../../config-azure.rst:75
+msgid "Config Values"
+msgstr ""
+
+#: ../../config-azure.rst:77
+msgid ""
+"Generate a new certificate for juju usage (or use an existing one). Suggest "
+"to use a 'Common Name' with 'Juju' in it so its obvious in the web UI later."
+" Run the following commands on Ubuntu to generate a new certificate:"
+msgstr ""
+
+#: ../../config-azure.rst:91
+msgid ""
+"Login to the Windows Azure console @ `https://manage.windowsazure.com`_. "
+"From here you can gather the following information:"
+msgstr ""
+
+#: ../../config-azure.rst:95
+msgid ""
+"Settings Left Navigation: get the ``SUBSCRIPTION ID`` of the account you "
+"upload to. This will be used for the ``management-subscription-id``"
+msgstr ""
+
+#: ../../config-azure.rst:97
+msgid ""
+"Settings Left Navigation: \"upload\" the MyCert.cer file above (if you "
+"created one). This is the certificate you used for the ``management- "
+"certificate-path``"
+msgstr ""
+
+#: ../../config-azure.rst:100
+msgid "Storage Left Navigation:"
+msgstr ""
+
+#: ../../config-azure.rst:102
+msgid "Click New (bottom left)"
+msgstr ""
+
+#: ../../config-azure.rst:103
+msgid "Click Quick Create"
+msgstr ""
+
+#: ../../config-azure.rst:104
+msgid ""
+"Add a name in url (for example ``juju0useast0``). This is the value to be "
+"used for ``storage-account-name``."
+msgstr ""
+
+#: ../../config-azure.rst:106
+msgid "Select Location (for example: East US)"
+msgstr ""
+
+#: ../../config-azure.rst:107
+msgid "Select Subscription"
+msgstr ""
+
+#: ../../config-azure.rst:108
+msgid "Disable \"Enable Geo-Replication\" (not applicable)"
+msgstr ""
+
+#: ../../config-azure.rst:112
+msgid ""
+"You must create the storage account in the same region/location specified by"
+" the ``location`` key value. For example, if ``location: West US`` is set "
+"then ``storage-account-name:`` must also have a storage set up in ``West "
+"US``. Failure to do so will result in a group affinity error."
+msgstr ""
+
+#: ../../config-azure.rst:118
+msgid ""
+"Ensure the environments.yaml is configured with the above values and save."
+msgstr ""

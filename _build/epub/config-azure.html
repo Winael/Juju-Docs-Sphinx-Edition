@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring for Windows Azure</title>
+    
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config-hpcloud.html" title="Configuring for HPCloud"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config-aws.html" title="Configuring for Amazon AWS"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Juju docs - Sphinx Edition 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="configuring-for-windows-azure">
+<h1>Configuring for Windows Azure</h1>
+<p>This process requires you to have an Windows Azure account. If you
+have not signed up for one yet, it can obtained at
+<a class="reference external" href="http://www.windowsazure.com/">http://www.windowsazure.com/</a>.</p>
+<p>You should start by generating a generic configuration file for Juju,
+using the command:</p>
+<div class="highlight-python"><pre>juju generate-config</pre>
+</div>
+<p>This will generate a file, environments.yaml , which will live in your
+~/.juju/ directory (and will create the directory if it doesn&#8217;t
+already exist).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above command will not overwrite your existing
+environments.yaml file, or output to stdout. In order to see the
+boilerplate environment.yaml on stdout you need to append the <tt class="docutils literal"><span class="pre">--show</span></tt>
+option. This is helpful if you have an existing environment.yaml and
+just need to add a section. For example:</p>
+</div>
+<div class="highlight-python"><pre>juju generate-config --show</pre>
+</div>
+<p>You can then copy and paste the needed section.</p>
+<p>The generic configuration sections generated for Windows Azure will
+look something like this:</p>
+<div class="highlight-python"><pre>azure:
+  type: azure
+  admin-secret: 35d65be36c72da940933dd02f8d7cef0
+  # Location for instances, e.g. West US, North Europe.
+  location: West US
+  # http://msdn.microsoft.com/en-us/library/windowsazure
+  # Windows Azure Management info.
+  management-subscription-id: 886413e1-3b8a-5382-9b90-0c9aee199e5d
+  management-certificate-path: /home/me/azure.pem
+  # Windows Azure Storage info.
+  storage-account-name: juju0useast0
+  # Public Storage info (account name and container name) denoting a public
+  # container holding the juju tools.
+  # public-storage-account-name: jujutools
+  # public-storage-container-name: juju-tools
+  # Override OS image selection with a fixed image for all deployments.
+  # Most useful for developers.
+  # force-image-name: b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-13_10-amd64-server-DEVELOPMENT-20130713-Juju_ALPHA-en-us-30GB
+  # Pick a simplestreams stream to select OS images from: daily or released
+  # images, or any other stream available on simplestreams.  Leave blank for
+  # released images.
+  # image-stream: ""
+  # default-series: precise</pre>
+</div>
+<p>This is the configuration environments.yaml file needed to run on
+Windows Azure. You will need to set the <tt class="docutils literal"><span class="pre">management-subscription-id</span></tt>,
+<tt class="docutils literal"><span class="pre">management-certificate-path</span></tt>, and <tt class="docutils literal"><span class="pre">storage-account-name</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Other than <tt class="docutils literal"><span class="pre">location</span></tt> the other key vaule defaults are
+recommended, but can be updated to your preference.</p>
+</div>
+<div class="section" id="config-values">
+<h2>Config Values</h2>
+<p>Generate a new certificate for juju usage (or use an existing one).
+Suggest to use a &#8216;Common Name&#8217; with &#8216;Juju&#8217; in it so its obvious in the
+web UI later. Run the following commands on Ubuntu to generate a new
+certificate:</p>
+<div class="highlight-python"><pre>openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout azure.pem -out azure.pem
+openssl x509 -inform pem -in azure.pem -outform der -out azure.cer
+chmod 600 azure.pem</pre>
+</div>
+<p>Login to the Windows Azure console &#64; <a class="reference external" href="https://manage.windowsazure.com">https://manage.windowsazure.com</a>. From here you can gather the
+following information:</p>
+<ul>
+<li><p class="first">Settings Left Navigation: get the <tt class="docutils literal"><span class="pre">SUBSCRIPTION</span> <span class="pre">ID</span></tt> of the account
+you upload to. This will be used for the <tt class="docutils literal"><span class="pre">management-subscription-id</span></tt></p>
+</li>
+<li><p class="first">Settings Left Navigation: &#8220;upload&#8221; the MyCert.cer file above (if you
+created one). This is the certificate you used for the <tt class="docutils literal"><span class="pre">management-</span>
+<span class="pre">certificate-path</span></tt></p>
+</li>
+<li><p class="first">Storage Left Navigation:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click New (bottom left)</li>
+<li>Click Quick Create</li>
+<li>Add a name in url (for example <tt class="docutils literal"><span class="pre">juju0useast0</span></tt>). This is the value to
+be used for <tt class="docutils literal"><span class="pre">storage-account-name</span></tt>.</li>
+<li>Select Location (for example: East US)</li>
+<li>Select Subscription</li>
+<li>Disable &#8220;Enable Geo-Replication&#8221; (not applicable)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="topic">
+<p class="topic-title first">Note:</p>
+<p>You must create the storage account in the same region/location
+specified by the <tt class="docutils literal"><span class="pre">location</span></tt> key value. For example, if <tt class="docutils literal"><span class="pre">location:</span> <span class="pre">West</span>
+<span class="pre">US</span></tt> is set then <tt class="docutils literal"><span class="pre">storage-account-name:</span></tt> must also have a storage set
+up in <tt class="docutils literal"><span class="pre">West</span> <span class="pre">US</span></tt>. Failure to do so will result in a group affinity
+error.</p>
+</div>
+<p>Ensure the environments.yaml is configured with the above values and
+save.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Winael.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

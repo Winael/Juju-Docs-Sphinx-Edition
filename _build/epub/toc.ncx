@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="2"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>Juju docs - Sphinx Edition</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>Welcome to Juju docs - Sphinx Edition&#39;s documentation!</text>
+      </navLabel>
+      <content src="index.html" />
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>Introduction</text>
+      </navLabel>
+      <content src="getting-started.html" />
+    </navPoint>
+    <navPoint id="navPoint3" playOrder="3">
+      <navLabel>
+        <text>Installation</text>
+      </navLabel>
+      <content src="getting-started.html#installation" />
+    </navPoint>
+    <navPoint id="navPoint4" playOrder="4">
+      <navLabel>
+        <text>Configuring</text>
+      </navLabel>
+      <content src="getting-started.html#configuring" />
+    </navPoint>
+    <navPoint id="navPoint5" playOrder="5">
+      <navLabel>
+        <text>Testing your setup</text>
+      </navLabel>
+      <content src="getting-started.html#testing-your-setup" />
+    </navPoint>
+    <navPoint id="navPoint6" playOrder="6">
+      <navLabel>
+        <text>Configuring for Amazon AWS</text>
+      </navLabel>
+      <content src="config-aws.html" />
+    </navPoint>
+    <navPoint id="navPoint7" playOrder="7">
+      <navLabel>
+        <text>Configuring for Windows Azure</text>
+      </navLabel>
+      <content src="config-azure.html" />
+      <navPoint id="navPoint7" playOrder="7">
+        <navLabel>
+          <text>Configuring for Windows Azure</text>
+        </navLabel>
+        <content src="config-azure.html" />
+      </navPoint>
+      <navPoint id="navPoint8" playOrder="8">
+        <navLabel>
+          <text>Config Values</text>
+        </navLabel>
+        <content src="config-azure.html#config-values" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint9" playOrder="9">
+      <navLabel>
+        <text>Configuring for HPCloud</text>
+      </navLabel>
+      <content src="config-hpcloud.html" />
+    </navPoint>
+    <navPoint id="navPoint10" playOrder="10">
+      <navLabel>
+        <text>Configuring for OpenStack</text>
+      </navLabel>
+      <content src="config-openstack.html" />
+    </navPoint>
+    <navPoint id="navPoint11" playOrder="11">
+      <navLabel>
+        <text>Configuring for MAAS</text>
+      </navLabel>
+      <content src="config-maas.html" />
+      <navPoint id="navPoint11" playOrder="11">
+        <navLabel>
+          <text>Configuring for MAAS</text>
+        </navLabel>
+        <content src="config-maas.html" />
+      </navPoint>
+      <navPoint id="navPoint12" playOrder="12">
+        <navLabel>
+          <text>Get your API key</text>
+        </navLabel>
+        <content src="config-maas.html#get-your-api-key" />
+      </navPoint>
+      <navPoint id="navPoint13" playOrder="13">
+        <navLabel>
+          <text>Edit or create the configuration</text>
+        </navLabel>
+        <content src="config-maas.html#edit-or-create-the-configuration" />
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013, Winael
+# This file is distributed under the same license as the Juju docs - Sphinx Edition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:38\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../config-openstack.rst:2
+# 74dfbbdcb76d4ffb9e8d0a0c7d430e94
+msgid "Configuring for OpenStack"
+msgstr ""
+
+#: ../../config-openstack.rst:4
+# 57f1e903e9894eff9d4d7b92e48f3f7c
+msgid "You should start by generating a generic configuration file for Juju, using the command:"
+msgstr ""
+
+#: ../../config-openstack.rst:12
+# d849bc64bbbb4165aaf2fc51fef43645
+msgid "This will generate a file, environments.yaml , which will live in your ~/.juju/ directory (and will create the directory if it doesn't already exist)."
+msgstr ""
+
+#: ../../config-openstack.rst:16
+# 22949919e13640e4aab802ef22dd511c
+msgid "If you have an existing configuration, you can use ``juju generate-config --show`` to output the new config file, then copy and paste relevant areas in a text editor etc."
+msgstr ""
+
+#: ../../config-openstack.rst:20
+# 55a63c13f86e4b9089f49ea8af0c8f00
+msgid "The essential configuration sections for OpenStack look like this:"
+msgstr ""
+
+#: ../../config-openstack.rst:51
+# 1ce01e6911f840519ea315922bc3cbb3
+msgid "At any time you can run ``juju init --show`` to display the most revent version of the environments.yaml template file, instead of having it write to file."
+msgstr ""
+
+#: ../../config-openstack.rst:55
+# 0034b556a55e41d6a9ab47c09fbee59a
+msgid "Remember to substitute in the parts of the snippet that are important to you. If you are deploying on OpenStack the following documentation might also be useful:"
+msgstr ""
+
+#: ../../config-openstack.rst:59
+# 8e2547e5f56044a3b776d93b1753cb8c
+msgid "`Ubuntu Cloud Infrastructure`_"
+msgstr ""
+
