@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring for OpenStack</title>
+    
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config-maas.html" title="Configuring for MAAS"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config-hpcloud.html" title="Configuring for HPCloud"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Juju docs - Sphinx Edition 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="configuring-for-openstack">
+<h1>Configuring for OpenStack</h1>
+<p>You should start by generating a generic configuration file for Juju,
+using the command:</p>
+<div class="highlight-python"><pre>juju generate-config</pre>
+</div>
+<p>This will generate a file, environments.yaml , which will live in your
+~/.juju/ directory (and will create the directory if it doesn&#8217;t
+already exist).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have an existing configuration, you can use <tt class="docutils literal"><span class="pre">juju</span>
+<span class="pre">generate-config</span> <span class="pre">--show</span></tt> to output the new config file, then copy and
+paste relevant areas in a text editor etc.</p>
+</div>
+<p>The essential configuration sections for OpenStack look like this:</p>
+<div class="highlight-python"><pre>openstack:
+  type: openstack
+  # Specifies whether the use of a floating IP address is required to give the nodes
+  # a public IP address. Some installations assign public IP addresses by default without
+  # requiring a floating IP address.
+  # use-floating-ip: false
+  admin-secret: 13850d1b9786065cadd0f477e8c97cd3
+  # Globally unique swift bucket name
+  control-bucket: juju-fd6ab8d02393af742bfbe8b9629707ee
+  # Usually set via the env variable OS_AUTH_URL, but can be specified here
+  # auth-url: https://yourkeystoneurl:443/v2.0/
+  # override if your workstation is running a different series to which you are deploying
+  # default-series: precise
+  # The following are used for userpass authentication (the default)
+  auth-mode: userpass
+  # Usually set via the env variable OS_USERNAME, but can be specified here
+  # username:
+  # Usually set via the env variable OS_PASSWORD, but can be specified here
+  # password:
+  # Usually set via the env variable OS_TENANT_NAME, but can be specified here
+  # tenant-name:
+  # Usually set via the env variable OS_REGION_NAME, but can be specified here
+  # region:</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At any time you can run <tt class="docutils literal"><span class="pre">juju</span> <span class="pre">init</span> <span class="pre">--show</span></tt> to display the most
+revent version of the environments.yaml template file, instead of
+having it write to file.</p>
+</div>
+<p>Remember to substitute in the parts of the snippet that are important
+to you. If you are deploying on OpenStack the following documentation
+might also be useful:</p>
+<p><a class="reference external" href="https://help.ubuntu.com/community/UbuntuCloudInfrastructure">Ubuntu Cloud Infrastructure</a><span class="link-target"> [https://help.ubuntu.com/community/UbuntuCloudInfrastructure]</span></p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Winael.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

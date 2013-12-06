@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0"
+      unique-identifier="unknown">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:title>Juju docs - Sphinx Edition</dc:title>
+    <dc:creator opf:role="aut">Winael</dc:creator>
+    <dc:publisher>Winael</dc:publisher>
+    <dc:rights>2013, Winael</dc:rights>
+    <dc:identifier id="unknown" opf:scheme="unknown">unknown</dc:identifier>
+    <dc:date>2013-12-05</dc:date>
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="getting-started.html"
+          href="getting-started.html"
+          media-type="application/xhtml+xml" />
+    <item id="getting-started-keygen-win.html"
+          href="getting-started-keygen-win.html"
+          media-type="application/xhtml+xml" />
+    <item id="config-aws.html"
+          href="config-aws.html"
+          media-type="application/xhtml+xml" />
+    <item id="config-hpcloud.html"
+          href="config-hpcloud.html"
+          media-type="application/xhtml+xml" />
+    <item id="config-maas.html"
+          href="config-maas.html"
+          media-type="application/xhtml+xml" />
+    <item id="config-azure.html"
+          href="config-azure.html"
+          media-type="application/xhtml+xml" />
+    <item id="index.html"
+          href="index.html"
+          media-type="application/xhtml+xml" />
+    <item id="search.html"
+          href="search.html"
+          media-type="application/xhtml+xml" />
+    <item id="genindex.html"
+          href="genindex.html"
+          media-type="application/xhtml+xml" />
+    <item id="config-openstack.html"
+          href="config-openstack.html"
+          media-type="application/xhtml+xml" />
+    <item id="_static_comment-close.png"
+          href="_static/comment-close.png"
+          media-type="image/png" />
+    <item id="_static_comment.png"
+          href="_static/comment.png"
+          media-type="image/png" />
+    <item id="_static_up-pressed.png"
+          href="_static/up-pressed.png"
+          media-type="image/png" />
+    <item id="_static_down-pressed.png"
+          href="_static/down-pressed.png"
+          media-type="image/png" />
+    <item id="_static_plus.png"
+          href="_static/plus.png"
+          media-type="image/png" />
+    <item id="_static_comment-bright.png"
+          href="_static/comment-bright.png"
+          media-type="image/png" />
+    <item id="_static_ajax-loader.gif"
+          href="_static/ajax-loader.gif"
+          media-type="image/gif" />
+    <item id="_static_epub.css"
+          href="_static/epub.css"
+          media-type="text/css" />
+    <item id="_static_file.png"
+          href="_static/file.png"
+          media-type="image/png" />
+    <item id="_static_pygments.css"
+          href="_static/pygments.css"
+          media-type="text/css" />
+    <item id="_static_minus.png"
+          href="_static/minus.png"
+          media-type="image/png" />
+    <item id="_static_basic.css"
+          href="_static/basic.css"
+          media-type="text/css" />
+    <item id="_static_up.png"
+          href="_static/up.png"
+          media-type="image/png" />
+    <item id="_static_down.png"
+          href="_static/down.png"
+          media-type="image/png" />
+    <item id="_images_getting_started-aws_keys.png"
+          href="_images/getting_started-aws_keys.png"
+          media-type="image/png" />
+    <item id="_images_getting_started-hpc-tenant.png"
+          href="_images/getting_started-hpc-tenant.png"
+          media-type="image/png" />
+    <item id="_images_getting_started-hpc-config1.png"
+          href="_images/getting_started-hpc-config1.png"
+          media-type="image/png" />
+    <item id="_images_getting_started-aws_security.png"
+          href="_images/getting_started-aws_security.png"
+          media-type="image/png" />
+    <item id="_images_getting_started-hpc-region.png"
+          href="_images/getting_started-hpc-region.png"
+          media-type="image/png" />
+    <item id="_images_getting_started-wordpress.png"
+          href="_images/getting_started-wordpress.png"
+          media-type="image/png" />
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="index.html" />
+    <itemref idref="getting-started.html" />
+    <itemref idref="config-aws.html" />
+    <itemref idref="config-azure.html" />
+    <itemref idref="config-hpcloud.html" />
+    <itemref idref="config-openstack.html" />
+    <itemref idref="config-maas.html" />
+    <itemref idref="genindex.html" />
+  </spine>
+</package>

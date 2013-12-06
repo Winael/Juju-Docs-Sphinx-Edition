@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013, Winael
+# This file is distributed under the same license as the Juju docs - Sphinx Edition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:38\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../config-azure.rst:2
+# ded3090fc05d47dca337c72d2b5e3b84
+msgid "Configuring for Windows Azure"
+msgstr ""
+
+#: ../../config-azure.rst:4
+# d6ba5689c14a470381e1dbc6cfe25636
+msgid "This process requires you to have an Windows Azure account. If you have not signed up for one yet, it can obtained at `http://www.windowsazure.com/`_."
+msgstr ""
+
+#: ../../config-azure.rst:8
+# dea1a7cdc64942ed9f4d8f304d779844
+msgid "You should start by generating a generic configuration file for Juju, using the command:"
+msgstr ""
+
+#: ../../config-azure.rst:16
+# f484f81ede974141b7951dc7c6b99851
+msgid "This will generate a file, environments.yaml , which will live in your ~/.juju/ directory (and will create the directory if it doesn't already exist)."
+msgstr ""
+
+#: ../../config-azure.rst:20
+# 954eeb13bf7549ab8e347e624c372208
+msgid "The above command will not overwrite your existing environments.yaml file, or output to stdout. In order to see the boilerplate environment.yaml on stdout you need to append the ``--show`` option. This is helpful if you have an existing environment.yaml and just need to add a section. For example:"
+msgstr ""
+
+#: ../../config-azure.rst:32
+# e21a5c3b919a43ca8918b8367a4162f6
+msgid "You can then copy and paste the needed section."
+msgstr ""
+
+#: ../../config-azure.rst:34
+# 4a5f217b00034259ad9307cfa6f4a833
+msgid "The generic configuration sections generated for Windows Azure will look something like this:"
+msgstr ""
+
+#: ../../config-azure.rst:67
+# 0f177123ddb846888f20f670ab98897b
+msgid "This is the configuration environments.yaml file needed to run on Windows Azure. You will need to set the ``management-subscription-id``, ``management-certificate-path``, and ``storage-account-name``."
+msgstr ""
+
+#: ../../config-azure.rst:71
+# ed3e329cf6ca485e8fa8938280aa435f
+msgid "Other than ``location`` the other key vaule defaults are recommended, but can be updated to your preference."
+msgstr ""
+
+#: ../../config-azure.rst:75
+# 9cf9dc06842f4aa0b2a86ffa1ce5243d
+msgid "Config Values"
+msgstr ""
+
+#: ../../config-azure.rst:77
+# 5f3e06db83764495a2f61086d9040b1a
+msgid "Generate a new certificate for juju usage (or use an existing one). Suggest to use a 'Common Name' with 'Juju' in it so its obvious in the web UI later. Run the following commands on Ubuntu to generate a new certificate:"
+msgstr ""
+
+#: ../../config-azure.rst:91
+# 9c6b491e954d46ff90424a0cba2869a0
+msgid "Login to the Windows Azure console @ `https://manage.windowsazure.com`_. From here you can gather the following information:"
+msgstr ""
+
+#: ../../config-azure.rst:95
+# 52f62f2d5aaf48e688c5ef2f131e0e76
+msgid "Settings Left Navigation: get the ``SUBSCRIPTION ID`` of the account you upload to. This will be used for the ``management-subscription-id``"
+msgstr ""
+
+#: ../../config-azure.rst:97
+# 2922392894e24a0ea4c55a090e5a3514
+msgid "Settings Left Navigation: \"upload\" the MyCert.cer file above (if you created one). This is the certificate you used for the ``management- certificate-path``"
+msgstr ""
+
+#: ../../config-azure.rst:100
+# b4559c3a5ee947688dfca7b7521c0c02
+msgid "Storage Left Navigation:"
+msgstr ""
+
+#: ../../config-azure.rst:102
+# 40c34a93a81c4ae9a32e18b1a8b543e3
+msgid "Click New (bottom left)"
+msgstr ""
+
+#: ../../config-azure.rst:103
+# 8517da76d1b9430baa9438d249dcdb84
+msgid "Click Quick Create"
+msgstr ""
+
+#: ../../config-azure.rst:104
+# ad3253d1a40441959726a9ee85515599
+msgid "Add a name in url (for example ``juju0useast0``). This is the value to be used for ``storage-account-name``."
+msgstr ""
+
+#: ../../config-azure.rst:106
+# ec84a49634cd44479d15c707b2f974d1
+msgid "Select Location (for example: East US)"
+msgstr ""
+
+#: ../../config-azure.rst:107
+# a1409fe358974102a7bd18291b86ce57
+msgid "Select Subscription"
+msgstr ""
+
+#: ../../config-azure.rst:108
+# f1ee005b28df419c847d01e23a813372
+msgid "Disable \"Enable Geo-Replication\" (not applicable)"
+msgstr ""
+
+#: ../../config-azure.rst:112
+# fac020e7416043ac9facfe588aec656f
+msgid "You must create the storage account in the same region/location specified by the ``location`` key value. For example, if ``location: West US`` is set then ``storage-account-name:`` must also have a storage set up in ``West US``. Failure to do so will result in a group affinity error."
+msgstr ""
+
+#: ../../config-azure.rst:118
+# 027651c1f15745db9c16cc8395335aed
+msgid "Ensure the environments.yaml is configured with the above values and save."
+msgstr ""
+

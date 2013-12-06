@@ -1,0 +1,89 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:09\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../config-hpcloud.rst:2
+msgid "Configuring for HPCloud"
+msgstr ""
+
+#: ../../config-hpcloud.rst:4
+msgid ""
+"You should start by generating a generic configuration file for Juju, using "
+"the command:"
+msgstr ""
+
+#: ../../config-hpcloud.rst:12
+msgid ""
+"This will generate a file, environments.yaml , which will live in your "
+"~/.juju/ directory (and will create the directory if it doesn't already "
+"exist)."
+msgstr ""
+
+#: ../../config-hpcloud.rst:16
+msgid "If you have an existing configuration, you can use ``juju"
+msgstr ""
+
+#: ../../config-hpcloud.rst:17
+msgid ""
+"generate-config --show`` to output the new config file, then copy and paste "
+"relevant areas in a text editor etc."
+msgstr ""
+
+#: ../../config-hpcloud.rst:20
+msgid "The essential configuration sections for HPCloud look like this:"
+msgstr ""
+
+#: ../../config-hpcloud.rst:41
+msgid ""
+"The items highlighted are values you will need to enter, and are explained "
+"below. You will find most of the relevant information on the `HP Cloud API "
+"Keys page`_"
+msgstr ""
+
+#: ../../config-hpcloud.rst:46
+msgid ""
+"``tenant-name:`` For HPCloud, this is listed as the project name on the "
+"`\"Manage Projects\" page`_."
+msgstr ""
+
+#: ../../config-hpcloud.rst:51
+msgid ""
+"You will find the following information on the `HP Cloud API Keys page for "
+"your account`_."
+msgstr ""
+
+#: ../../config-hpcloud.rst:54
+msgid ""
+"``auth-url:`` This is the keystone url for authentication. It is given (on a"
+" region by region basis) under the heading \"Service Endpoints - identity\""
+msgstr ""
+
+#: ../../config-hpcloud.rst:60
+msgid ""
+"``region:`` This is the longer format region name, given under the headings "
+"for Block Storage and Compute sections."
+msgstr ""
+
+#: ../../config-hpcloud.rst:65
+msgid "``username:`` Enter your HP Cloud login username."
+msgstr ""
+
+#: ../../config-hpcloud.rst:66
+msgid "``password:`` Enter your HP Cloud login password."
+msgstr ""
+
+#: ../../config-hpcloud.rst:67
+msgid ""
+"``public-bucket-url:`` Currently up to date tools are provided to HP Cloud "
+"by a public bucket. If you're using your own imagemetadata you'd change this"
+" URL to the bucket you've created."
+msgstr ""

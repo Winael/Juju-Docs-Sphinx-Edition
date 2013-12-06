@@ -1,0 +1,58 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Juju docs - Sphinx Edition 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-05 00:38\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../config-openstack.rst:2
+msgid "Configuring for OpenStack"
+msgstr ""
+
+#: ../../config-openstack.rst:4
+msgid ""
+"You should start by generating a generic configuration file for Juju, using "
+"the command:"
+msgstr ""
+
+#: ../../config-openstack.rst:12
+msgid ""
+"This will generate a file, environments.yaml , which will live in your "
+"~/.juju/ directory (and will create the directory if it doesn't already "
+"exist)."
+msgstr ""
+
+#: ../../config-openstack.rst:16
+msgid ""
+"If you have an existing configuration, you can use ``juju generate-config "
+"--show`` to output the new config file, then copy and paste relevant areas "
+"in a text editor etc."
+msgstr ""
+
+#: ../../config-openstack.rst:20
+msgid "The essential configuration sections for OpenStack look like this:"
+msgstr ""
+
+#: ../../config-openstack.rst:51
+msgid ""
+"At any time you can run ``juju init --show`` to display the most revent "
+"version of the environments.yaml template file, instead of having it write "
+"to file."
+msgstr ""
+
+#: ../../config-openstack.rst:55
+msgid ""
+"Remember to substitute in the parts of the snippet that are important to "
+"you. If you are deploying on OpenStack the following documentation might "
+"also be useful:"
+msgstr ""
+
+#: ../../config-openstack.rst:59
+msgid "`Ubuntu Cloud Infrastructure`_"
+msgstr ""

@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring for Amazon AWS</title>
+    
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config-azure.html" title="Configuring for Windows Azure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="getting-started.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Juju docs - Sphinx Edition 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="configuring-for-amazon-aws">
+<h1>Configuring for Amazon AWS</h1>
+<p>This process requires you to have an Amazon Web Services (AWS)
+account. If you have not signed up for one yet, it can obtained at
+<a class="reference external" href="http://aws.amazon.com">http://aws.amazon.com</a>.</p>
+<p>You should start by generating a generic configuration file for Juju,
+using the command:</p>
+<div class="highlight-python"><pre>juju generate-config</pre>
+</div>
+<p>This will generate a file, environments.yaml , which will live in your
+~/.juju/ directory (and will create the directory if it doesn&#8217;t
+already exist).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have an existing configuration, you can use <tt class="docutils literal"><span class="pre">juju</span>
+<span class="pre">generate-config</span> <span class="pre">--show</span></tt> to output the new config file, then copy and
+paste relevant areas in a text editor etc.</p>
+</div>
+<p>The generic configuration sections generated for AWS will look
+something like this:</p>
+<div class="highlight-python"><pre>## https://juju.ubuntu.com/get-started/amazon/
+amazon:
+type: ec2
+admin-secret: 772b97c4c31c6b5883475e396d9a6d32
+# globally unique S3 bucket name
+control-bucket: juju-a29403f89d8223343d3cab01f1ca5a4d
+# override if your machine is on a different series than what you're deploying
+# default-series: precise
+# region defaults to us-east-1, override if required
+# region: us-east-1
+# Usually set via the env variable AWS_ACCESS_KEY_ID, but can be specified here
+# access-key: secret
+# Can be set via the env variable AWS_SECRET_ACCESS_KEY, or specified here
+# secret-key: secret</pre>
+</div>
+<p>This is a simple configuration intended to run on EC2 with S3
+permanent storage. Values for the default setting can be changed
+simply by editing this file, uncommenting the relevant lines and
+adding your own settings. All you need to do to get this configuration
+to work is to either set the <tt class="docutils literal"><span class="pre">AWS_ACCESS_KEY_ID</span></tt> and
+<tt class="docutils literal"><span class="pre">AWS_SECRET_ACCESS_KEY</span></tt> via environment variables, or uncomment and
+add the values to the configuration file.</p>
+<p>You can retrieve these values easily from your AWS Management Console
+at <a class="reference external" href="http://console.aws.amazon.com">http://console.aws.amazon.com</a>. Click on your name in the top-
+right and then the &#8220;Security Credentials&#8221; link from the drop down
+menu.</p>
+<img alt="_images/getting_started-aws_security.png" src="_images/getting_started-aws_security.png" />
+<p>Under the &#8220;Access Keys&#8221; heading click the &#8220;Create New Root Key&#8221;
+button. You will be prompted to &#8220;Download Key File&#8221; which by default
+is named <tt class="docutils literal"><span class="pre">rootkey.csv</span></tt>. Open this file to get the access-key and secret-
+key for the environments.yaml configuration file.</p>
+<img alt="_images/getting_started-aws_keys.png" src="_images/getting_started-aws_keys.png" />
+<p>The region: value corresponds to the AWS regions.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Winael.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
